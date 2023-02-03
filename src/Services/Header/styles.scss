@@ -1,0 +1,20 @@
+@import '../../Styles/variables.scss';
+@import '../../Styles/mixins.scss';
+
+header{
+    height: 80px;
+    width: 100%;
+    background-color: $bg-color-primary;
+    @include center;
+    justify-content: space-between;
+    padding-inline: 5%;
+
+    h2{
+        font-size: 30px;
+        color: $text-color-secondary;
+    }
+
+    p{
+        color: $text-color-secondary;
+    }
+}
