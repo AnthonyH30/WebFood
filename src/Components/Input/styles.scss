@@ -2,11 +2,14 @@
 @import '../../Styles/variables.scss';
 
 input{
-    width: 70%;
-    max-width: 500px;
+    width: 500px;
     height: 40px;
     border: none;
     background-color: $text-color-secondary;
     padding-left: 10px;
     outline: none;
+
+    @media(max-width: 900px){
+        width: 250px;
+    }
 }

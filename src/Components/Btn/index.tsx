@@ -3,9 +3,9 @@ import { ButtonProps } from '../../Types/ButtonType';
 import './styles.scss';
 
 
-export default function Btn({children}: ButtonProps) {
+export default function Btn({children, style}: ButtonProps) {
   return (
-    <button>
+    <button style={style}>
         {children}
     </button>
   )

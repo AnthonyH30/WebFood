@@ -8,10 +8,13 @@ function Home(){
     return(
         <>
             <Header />
-            <form className="Search">
-                <Input placeholder="Pesquisar" />
-                <Btn>Pesquisar</Btn>
-            </form>
+            <section className="box">
+                <form className="box__Search">
+                    <Input placeholder="Pesquisar" />
+                    <Btn>Pesquisar</Btn>
+                </form>
+                <Btn style={{position: 'absolute', top: '20px', right: '20px'}}>+ Adicionar</Btn>
+            </section>
         </>
     )
 }
