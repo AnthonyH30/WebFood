@@ -28,5 +28,26 @@
         background-color: white;
         border-radius: 20px;
         @include center;
+        flex-direction: column;
+        animation: modal .4s;
     }
+
+    .modal__form{
+        width: 90%;
+        padding-block: 30px;
+
+        .modal__form--title{
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@keyframes modal{
+from{
+    opacity: 0;
+    transform: translate3d(0, 60px, 0);
+}to{
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
 }
