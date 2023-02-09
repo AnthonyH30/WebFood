@@ -1,12 +1,10 @@
 import React from 'react';
-import { ButtonProps } from '../../Types/ButtonType';
 import './styles.scss';
 
+type Props = React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>
 
-export default function Btn({children, style}: ButtonProps) {
+export default function Btn( props : Props) {
   return (
-    <button style={style}>
-        {children}
-    </button>
+    <button {...props} />
   )
 }

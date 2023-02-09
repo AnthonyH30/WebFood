@@ -12,3 +12,21 @@
         @include center;
     }
 }
+
+.modal__overlay{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    @include center;
+    
+    .modal__content{
+        @include BoxShadow;
+        width: 80%;
+        max-width: 500px;
+        background-color: white;
+        border-radius: 20px;
+        @include center;
+    }
+}
