@@ -42,6 +42,21 @@
     }
 }
 
+.products{
+    @include center;
+    width: 100%;
+    padding-inline: 4%;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding-bottom: 50px;
+}
+
+@media(max-width: 500px){
+    .products{
+        padding-inline: 0px;
+    }
+}
+
 @keyframes modal{
 from{
     opacity: 0;
