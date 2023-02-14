@@ -32,6 +32,7 @@ function Home(){
                 <Btn style={{position: 'absolute', top: '20px', right: '20px'}} onClick={openModal}>+ Adicionar</Btn>
             </section>
             <section className="products">
+                {products.length ? null : <p>Nenhum item encontrado.</p>}
                 {products.map((product) => <ProductCard image={product.image} title={product.productName} description={product.description} key={product.id} onclick={() => handleDelete(product.id)} />)}
             </section>
             <Modal
