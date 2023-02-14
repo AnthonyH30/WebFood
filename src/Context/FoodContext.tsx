@@ -72,6 +72,18 @@ export default function FoodContextProvider({children}: FoodContextProps){
         }
     }
 
+    useEffect(() => {
+        const filteredData = data.filter((item: Product) => {
+            if(item.productName.toLocaleLowerCase().includes(search.toLowerCase())){
+                return true;
+            } else{
+                return false;
+            }
+        });
+
+        setProducts(filteredData);
+    },[search])
+
     const handleDelete = (id: number) =>{
         const filteredProducts = data.filter((product: Product) => product.id !== id)
         setData(filteredProducts);
