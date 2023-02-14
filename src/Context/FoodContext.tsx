@@ -17,7 +17,8 @@ const initialValue = {
     setProductName: () => {},
     description: "",
     setDescription: () => {},
-    handleSubmit: () => {}
+    handleSubmit: () => {},
+    handleDelete: () => {}
 }
 
 type FoodContextType ={
@@ -36,6 +37,7 @@ type FoodContextType ={
     description: string;
     setDescription: (newState: string) => void;
     handleSubmit: (e:React.SyntheticEvent) => void;
+    handleDelete: (e: number) => void;
 }
 
 export const FoodContext = createContext<FoodContextType>(initialValue);
@@ -64,9 +66,15 @@ export default function FoodContextProvider({children}: FoodContextProps){
             setImage("");
             setProductName("");
             setDescription("");
+            setModalIsOpen(false);
         }else{
             alert("Todos os campos são obrigatórios!")
         }
+    }
+
+    const handleDelete = (id: number) =>{
+        const filteredProducts = data.filter((product: Product) => product.id !== id)
+        setData(filteredProducts);
     }
 
     useEffect(() => {
@@ -74,7 +82,7 @@ export default function FoodContextProvider({children}: FoodContextProps){
     },[data])
 
     return(
-        <FoodContext.Provider value={{search, setSearch, modalIsOpen, setModalIsOpen, data, setData, products, setProducts, image, setImage, productName, setProductName, description, setDescription, handleSubmit}}>
+        <FoodContext.Provider value={{search, setSearch, modalIsOpen, setModalIsOpen, data, setData, products, setProducts, image, setImage, productName, setProductName, description, setDescription, handleSubmit, handleDelete}}>
             {children}
         </FoodContext.Provider>
     )

@@ -11,7 +11,7 @@ Modal.setAppElement('#root');
 
 function Home(){
 
-    const { search, setSearch, modalIsOpen, setModalIsOpen, image, setImage, productName, setProductName, description, setDescription, handleSubmit, products} = useContext(FoodContext);
+    const { search, setSearch, modalIsOpen, setModalIsOpen, image, setImage, productName, setProductName, description, setDescription, handleSubmit, products, handleDelete} = useContext(FoodContext);
 
     function closeModal(){
         setModalIsOpen(false);
@@ -32,7 +32,7 @@ function Home(){
                 <Btn style={{position: 'absolute', top: '20px', right: '20px'}} onClick={openModal}>+ Adicionar</Btn>
             </section>
             <section className="products">
-                {products.map((product) => <ProductCard image={product.image} title={product.productName} description={product.description} key={product.id} />)}
+                {products.map((product) => <ProductCard image={product.image} title={product.productName} description={product.description} key={product.id} onclick={() => handleDelete(product.id)} />)}
             </section>
             <Modal
                 isOpen={modalIsOpen}
