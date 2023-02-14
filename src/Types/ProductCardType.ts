@@ -3,4 +3,5 @@ export type ProductCardType ={
     title: string;
     description: string;
     onclick: () => void;
+    onclickEdit: () => void;
 }

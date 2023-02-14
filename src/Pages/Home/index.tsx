@@ -11,7 +11,7 @@ Modal.setAppElement('#root');
 
 function Home(){
 
-    const { search, setSearch, modalIsOpen, setModalIsOpen, image, setImage, productName, setProductName, description, setDescription, handleSubmit, products, handleDelete} = useContext(FoodContext);
+    const { search, setSearch, modalIsOpen, setModalIsOpen, image, setImage, productName, setProductName, description, setDescription, handleSubmit, products, handleDelete, handleEdit} = useContext(FoodContext);
 
     function closeModal(){
         setModalIsOpen(false);
@@ -33,7 +33,7 @@ function Home(){
             </section>
             <section className="products">
                 {products.length ? null : <p>Nenhum item encontrado.</p>}
-                {products.map((product) => <ProductCard image={product.image} title={product.productName} description={product.description} key={product.id} onclick={() => handleDelete(product.id)} />)}
+                {products.map((product) => <ProductCard image={product.image} title={product.productName} description={product.description} key={product.id} onclick={() => handleDelete(product.id)} onclickEdit={() => handleEdit(product)} />)}
             </section>
             <Modal
                 isOpen={modalIsOpen}

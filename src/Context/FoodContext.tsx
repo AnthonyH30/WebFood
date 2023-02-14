@@ -18,7 +18,8 @@ const initialValue = {
     description: "",
     setDescription: () => {},
     handleSubmit: () => {},
-    handleDelete: () => {}
+    handleDelete: () => {},
+    handleEdit: () => {}
 }
 
 type FoodContextType ={
@@ -38,6 +39,7 @@ type FoodContextType ={
     setDescription: (newState: string) => void;
     handleSubmit: (e:React.SyntheticEvent) => void;
     handleDelete: (e: number) => void;
+    handleEdit: (e: Product) => void;
 }
 
 export const FoodContext = createContext<FoodContextType>(initialValue);
@@ -89,12 +91,20 @@ export default function FoodContextProvider({children}: FoodContextProps){
         setData(filteredProducts);
     }
 
+    const handleEdit = (product: Product) =>{
+        setImage(product.image);
+        setProductName(product.productName);
+        setDescription(product.description);
+        setModalIsOpen(true);
+        handleDelete(product.id);
+    }
+
     useEffect(() => {
         setProducts(data);
     },[data])
 
     return(
-        <FoodContext.Provider value={{search, setSearch, modalIsOpen, setModalIsOpen, data, setData, products, setProducts, image, setImage, productName, setProductName, description, setDescription, handleSubmit, handleDelete}}>
+        <FoodContext.Provider value={{search, setSearch, modalIsOpen, setModalIsOpen, data, setData, products, setProducts, image, setImage, productName, setProductName, description, setDescription, handleSubmit, handleDelete, handleEdit}}>
             {children}
         </FoodContext.Provider>
     )
