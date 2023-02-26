@@ -1,11 +1,13 @@
 import React from "react";
 import './Global/Global.scss';
-import Home from "./Pages/Home";
+import PrivateRoutes from './Routes/PrivateRoutes';
+import PublicRoutes from './Routes/PublicRoutes';
+const auth = false;
 
 function App() {
   return (
     <>
-      <Home />
+      {auth ? <PrivateRoutes /> : <PublicRoutes />}
     </>
   )
 }
