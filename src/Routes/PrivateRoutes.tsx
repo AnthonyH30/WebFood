@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-// import Error from "../Pages/Error";
+import Error from "../Pages/Error";
 import Home from '../Pages/Home';
 
 function PrivateRoutes(){
@@ -7,7 +7,7 @@ function PrivateRoutes(){
         <Router>
             <Routes>
                 <Route path='/' element={<Home />} />
-                {/* <Route path='*' element={<Error />} /> */}
+                <Route path='*' element={<Error />} />
             </Routes>
         </Router>
     )
