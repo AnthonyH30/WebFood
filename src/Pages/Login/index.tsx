@@ -3,6 +3,7 @@ import './styles.scss';
 import loginimg from '../../assets/login.svg';
 import Input from '../../Components/Input';
 import Btn from '../../Components/Btn';
+import { Link } from 'react-router-dom';
 
 export default function Login() {
   return (
@@ -18,7 +19,7 @@ export default function Login() {
             <label title='Senha' htmlFor="senha">Senha:</label>
             <Input id='senha' placeholder='Senha' type='password' />
             <Btn style={{backgroundColor: 'white', color: '#c42f2f', marginTop: '20px', width: '150px', alignSelf: 'center'}}>Entrar</Btn>
-            <p className='aside__form-register'>Não tem uma conta? <a href='#' target='_blank'>Resgistre-se</a></p>
+            <p className='aside__form-register'>Não tem uma conta? <Link style={{color: 'white', textDecoration: 'none'}} to='/register'>Resgistre-se</Link></p>
           </form>
         </aside>
     </main>

@@ -1,16 +1,16 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 // import Error from "../Pages/Error";
-import Login from "../Pages/Login";
+import Home from '../Pages/Home';
 
-function PublicRoutes(){
+function PrivateRoutes(){
     return(
         <Router>
             <Routes>
-                <Route path='/' exact element={<Login />} />
+                <Route path='/' element={<Home />} />
                 {/* <Route path='*' element={<Error />} /> */}
             </Routes>
         </Router>
     )
 }
 
-export default PublicRoutes;
+export default PrivateRoutes;
