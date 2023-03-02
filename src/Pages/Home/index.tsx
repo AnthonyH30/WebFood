@@ -1,6 +1,6 @@
 import React, { memo, useContext } from "react";
 import './styles.scss';
-import Header from '../../Services/Header';
+import Header from '../../Components/Header';
 import Input from "../../Components/Input";
 import Btn from "../../Components/Btn";
 import { FoodContext } from "../../Context/FoodContext";
