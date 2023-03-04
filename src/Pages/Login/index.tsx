@@ -8,7 +8,7 @@ import { AuthContext } from '../../Context/AuthContext';
 
 export default function Login() {
 
-  const { auth, setAuth, name, setName, email, setEmail, password, setPassword } = useContext(AuthContext);
+  const { handleSignIn, email, setEmail, password, setPassword } = useContext(AuthContext);
 
   return (
     <main className='login-page'>
@@ -22,7 +22,7 @@ export default function Login() {
             <Input value={email} onChange={(e) => setEmail(e.target.value)} id='email' placeholder='E-mail' />
             <label title='Senha' htmlFor="senha">Senha:</label>
             <Input value={password} onChange={(e) => setPassword(e.target.value)} id='senha' placeholder='Senha' type='password' />
-            <Btn style={{backgroundColor: 'white', color: '#c42f2f', marginTop: '20px', width: '150px', alignSelf: 'center'}}>Entrar</Btn>
+            <Btn onClick={handleSignIn} style={{backgroundColor: 'white', color: '#c42f2f', marginTop: '20px', width: '150px', alignSelf: 'center'}}>Entrar</Btn>
             <p className='aside__form-register'>Não tem uma conta? <Link style={{color: 'white', textDecoration: 'none'}} to='/register'>Resgistre-se</Link></p>
           </form>
         </aside>
