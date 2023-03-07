@@ -1,8 +1,9 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { AuthProps } from "../Types/AuthContextType";
 import { useCreateUserWithEmailAndPassword, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { auth } from "../Services/firebaseConfig";
-import { redirect } from "react-router-dom";
+import { User, UserCredential } from "@firebase/auth";
+
 
 const initialValue= {
     email: '',
@@ -12,6 +13,8 @@ const initialValue= {
     handleSignUp: () => {},
     loading: false,
     handleSignIn: () => {},
+    userCredentials: {} as any,
+    setUserCredentials: () => {},
 }
 
 type AuthContextType ={
@@ -22,6 +25,8 @@ type AuthContextType ={
     handleSignUp: (e:React.SyntheticEvent) => void;
     loading: boolean;
     handleSignIn: (e:React.SyntheticEvent) => void;
+    userCredentials: UserCredential;
+    setUserCredentials: (newState: UserCredential) => void;
 }
 
 export const AuthContext = createContext<AuthContextType>(initialValue);
@@ -30,6 +35,7 @@ export default function AuthProvider({children}: AuthProps){
 
     const [email, setEmail] = useState(initialValue.email);
     const [password, setPassword] = useState(initialValue.password);
+    const [userCredentials, setUserCredentials] = useState(initialValue.userCredentials)
 
     const [
         createUserWithEmailAndPassword,
@@ -51,7 +57,12 @@ export default function AuthProvider({children}: AuthProps){
         setEmail('');
         setPassword('');
         alert("Conta criada!")
+        setUserCredentials(user)
       }
+
+      useEffect(() => {
+        console.log(userCredentials.user);
+      },[userCredentials])
 
       const handleSignIn = (e:React.SyntheticEvent) => {
         e.preventDefault();
@@ -61,7 +72,7 @@ export default function AuthProvider({children}: AuthProps){
       }
 
     return(
-        <AuthContext.Provider value={{ email, setEmail, password, setPassword, handleSignUp, loading, handleSignIn}}>
+        <AuthContext.Provider value={{ email, setEmail, password, setPassword, handleSignUp, loading, handleSignIn, userCredentials, setUserCredentials}}>
             {children}
         </AuthContext.Provider>
     )
