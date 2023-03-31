@@ -1,13 +1,20 @@
-import React from "react";
+import { useContext } from 'react';
+import AuthProvider, { AuthContext } from './Context/AuthContext';
 import './Global/Global.scss';
-import Home from "./Pages/Home";
+import PrivateRoutes from './Routes/PrivateRoutes';
+import PublicRoutes from './Routes/PublicRoutes';
+
+const auth = false;
 
 function App() {
+
+  const {  } = useContext(AuthContext);
+
   return (
-    <>
-      <Home />
-    </>
+    <AuthProvider>
+      {auth ? <PrivateRoutes /> : <PublicRoutes />}
+    </AuthProvider>
   )
 }
 
-export default App
+export default App;

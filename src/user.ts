@@ -1,5 +1,5 @@
 export const user ={
-    name: "Anthony",
+    name: "MegaBurger",
     email: "",
     password: "",
     products: [],

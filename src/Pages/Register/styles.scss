@@ -1,0 +1,74 @@
+@import '../../Styles/mixins.scss';
+@import '../../Styles/variables.scss';
+
+.register-page{
+    background-color: $bg-color-secondary;
+    @include center;
+    width: 100%;
+    min-height: 100vh;
+
+    &__image{
+        width: 50%;
+        @include center;
+
+        img{
+            width: 70%;
+            animation: starting .6s;
+        }
+    }
+
+    &__aside{
+        width: 50%;
+        @include center;
+
+        .aside__Register{
+            @include center;
+            flex-direction: column;
+            background-color: $bg-color-primary;
+            padding: 16px 16px;
+            gap: 5px;
+            border-radius: 8px;
+            animation: starting 1s;
+
+            &-title{
+                color: white;
+                align-self: center;
+            }
+
+            &-login{
+                align-self: center;
+                margin-block: 10px;
+            }
+        }
+    }
+
+    @media(max-width: 900px){
+        flex-direction: column;
+        gap: 100px;
+        padding-block: 50px;
+
+        &__image,&__aside{
+            width: 100%;
+        }
+
+        &__image{
+            margin-top: 50px;
+            img{
+                width: 50%;
+                @media(max-width: 500px){
+                    width: 100%;
+            }
+            }
+        }
+    }
+}
+
+@keyframes starting{
+    from{
+        opacity: 0;
+        transform: translate3d(0, 60px, 0);
+    }to{
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}

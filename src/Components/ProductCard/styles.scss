@@ -1,0 +1,48 @@
+@import '../../Styles/mixins.scss';
+
+.product__card{
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    min-height: 330px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+    @include BoxShadow;
+    position: relative;
+
+    &-image{
+        width: 100%;
+        height: 230px;
+    }
+
+    &-title{
+        margin-block: 5px;
+    }
+
+    &-title, &-description{
+        margin-inline: 10px;
+    }
+
+    &-description{
+        margin-bottom: 5px;
+    }
+
+    &-closeBtn, &-editBtn{
+        position: absolute;
+        top: 10px;
+        height: 30px;
+        width: 30px;
+        border-radius: 8px;
+        @include center;
+    }
+
+    &-closeBtn{
+        right: 10px;
+    }
+
+    &-editBtn{
+        left: 10px;
+        background-color: #ffc000;
+    }
+}

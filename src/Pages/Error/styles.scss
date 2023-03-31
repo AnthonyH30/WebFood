@@ -1,0 +1,14 @@
+@import '../../Styles/mixins.scss';
+@import '../../Styles/variables.scss';
+
+.error-page{
+    @include center;
+    background-color: $bg-color-secondary;
+    width: 100%;
+    min-height: 100vh;
+
+    &__image{
+        width: 40%;
+        cursor: pointer;
+    }
+}
