@@ -4,9 +4,11 @@ import './Global/Global.scss';
 import PrivateRoutes from './Routes/PrivateRoutes';
 import PublicRoutes from './Routes/PublicRoutes';
 
+const auth = false;
+
 function App() {
 
-  const { auth } = useContext(AuthContext);
+  const {  } = useContext(AuthContext);
 
   return (
     <AuthProvider>

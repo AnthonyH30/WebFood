@@ -21,18 +21,14 @@
         width: 50%;
         @include center;
 
-        .aside__form{
+        .aside__Register{
             @include center;
             flex-direction: column;
             background-color: $bg-color-primary;
-            padding: 16px 8px;
+            padding: 16px 16px;
             gap: 5px;
             border-radius: 8px;
             animation: starting 1s;
-
-            label{
-                align-self: flex-start;
-            }
 
             &-title{
                 color: white;
@@ -47,7 +43,8 @@
     }
 
     @media(max-width: 900px){
-        flex-direction: column-reverse;
+        flex-direction: column;
+        gap: 100px;
         padding-block: 50px;
 
         &__image,&__aside{

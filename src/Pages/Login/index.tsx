@@ -1,14 +1,14 @@
 import React, { useContext } from 'react';
 import './styles.scss';
 import loginimg from '../../assets/login.svg';
-import Input from '../../Components/Input';
 import Btn from '../../Components/Btn';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthContext';
+import googleIcon from '../../assets/google.svg';
 
 export default function Login() {
 
-  const { handleSignIn, email, setEmail, password, setPassword } = useContext(AuthContext);
+  const {  } = useContext(AuthContext);
 
   return (
     <main className='login-page'>
@@ -16,15 +16,11 @@ export default function Login() {
           <img src={loginimg} alt="Imagem de uma mulher encostada em uma pagina de login" />
         </figure>
         <aside className='login-page__aside'>
-          <form className='aside__form'>
-            <h2 className='aside__form-title'>Entrar</h2>
-            <label title='Email' htmlFor="email">E-mail:</label>
-            <Input value={email} onChange={(e) => setEmail(e.target.value)} id='email' placeholder='E-mail' />
-            <label title='Senha' htmlFor="senha">Senha:</label>
-            <Input value={password} onChange={(e) => setPassword(e.target.value)} id='senha' placeholder='Senha' type='password' />
-            <Btn onClick={handleSignIn} style={{backgroundColor: 'white', color: '#c42f2f', marginTop: '20px', width: '150px', alignSelf: 'center'}}>Entrar</Btn>
-            <p className='aside__form-register'>Não tem uma conta? <Link style={{color: 'white', textDecoration: 'none'}} to='/register'>Resgistre-se</Link></p>
-          </form>
+          <div className='aside__Login'>
+            <h2 className='aside__Login-title'>Entrar</h2>
+            <Btn style={{ marginTop: '20px', width: '150px', alignSelf: 'center'}}> <img src={googleIcon} alt="google icon" /> Entrar</Btn>
+            <p className='aside__Login-register'>Não tem uma conta? <Link style={{color: 'white', textDecoration: 'none'}} to='/register'>Resgistre-se</Link></p>
+          </div>
         </aside>
     </main>
   )
