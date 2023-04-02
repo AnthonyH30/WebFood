@@ -6,6 +6,7 @@ import Btn from "../../Components/Btn";
 import { FoodContext } from "../../Context/FoodContext";
 import Modal from "react-modal";
 import ProductCard from "../../Components/ProductCard";
+import ButtonApp from "../../Components/ButtonApp";
 
 Modal.setAppElement('#root');
 
@@ -25,11 +26,11 @@ function Home(){
         <>
             <Header />
             <section className="box">
-                <form className="box__Search">
+                <form className="box__Search" onSubmit={(e) => e.preventDefault()}>
                     <Input placeholder="Pesquisar" value={search} onChange={(e) => setSearch(e.target.value)} />
-                    <Btn>Pesquisar</Btn>
+                    <ButtonApp>Pesquisar</ButtonApp>
                 </form>
-                <Btn style={{position: 'absolute', top: '20px', right: '20px'}} onClick={openModal}>+ Adicionar</Btn>
+                <ButtonApp style={{position: 'absolute', top: '20px', right: '20px'}} onClick={openModal}>+ Adicionar</ButtonApp>
             </section>
             <section className="products">
                 {products.length ? null : <p>Nenhum item encontrado.</p>}

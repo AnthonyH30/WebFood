@@ -3,8 +3,8 @@ import './styles.scss';
 
 type Props = React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>
 
-export default function Btn( props : Props) {
+export default function ButtonApp( props : Props) {
   return (
-    <button className='btn' {...props} />
+    <button className='button' {...props} />
   )
 }

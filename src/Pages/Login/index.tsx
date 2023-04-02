@@ -4,7 +4,7 @@ import loginimg from '../../assets/login.svg';
 import Btn from '../../Components/Btn';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthContext';
-import googleIcon from '../../assets/google.svg';
+import { BsGoogle } from 'react-icons/bs';
 
 export default function Login() {
 
@@ -18,7 +18,7 @@ export default function Login() {
         <aside className='login-page__aside'>
           <div className='aside__Login'>
             <h2 className='aside__Login-title'>Entrar</h2>
-            <Btn style={{ marginTop: '20px', width: '150px', alignSelf: 'center'}}> <img src={googleIcon} alt="google icon" /> Entrar</Btn>
+            <Btn style={{ marginTop: '20px', width: '150px', alignSelf: 'center'}}> <BsGoogle /> Entrar</Btn>
             <p className='aside__Login-register'>Não tem uma conta? <Link style={{color: 'white', textDecoration: 'none'}} to='/register'>Resgistre-se</Link></p>
           </div>
         </aside>

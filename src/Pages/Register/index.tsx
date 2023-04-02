@@ -4,7 +4,7 @@ import registerimg from '../../assets/register.svg';
 import Btn from '../../Components/Btn';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthContext';
-import googleIcon from '../../assets/google.svg';
+import { BsGoogle } from 'react-icons/bs';
 
 export default function Register() {
 
@@ -19,7 +19,7 @@ export default function Register() {
           <aside className='register-page__aside'>
               <div className='aside__Register'>
                   <h2 className='aside__Register-title'>Cadastrar</h2>
-                  <Btn style={{ marginTop: '20px', width: '150px', alignSelf: 'center'}}> <img src={googleIcon} alt="google icon" /> Cadastrar</Btn>
+                  <Btn style={{ marginTop: '20px', width: '150px', alignSelf: 'center'}}> <BsGoogle /> Cadastrar</Btn>
                   <p className='aside__Register-login'>Já possui uma conta? <Link style={{color: 'white', textDecoration: 'none'}} to='/'>Entrar</Link></p>
               </div>
           </aside>
