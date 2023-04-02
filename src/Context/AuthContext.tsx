@@ -17,7 +17,9 @@ export const AuthContext = createContext<AuthContextType>(initialValue);
 
 export default function AuthProvider({children}: AuthProps){
 
-    const [userCredentials, setUserCredentials] = useState(initialValue.userCredentials)
+    const [userCredentials, setUserCredentials] = useState(initialValue.userCredentials);
+
+    
 
     return(
         <AuthContext.Provider value={{  userCredentials, setUserCredentials}}>

@@ -35,10 +35,13 @@
         width: 30px;
         border-radius: 8px;
         @include center;
+        border: none;
+        cursor: pointer;
     }
 
     &-closeBtn{
         right: 10px;
+        background-color: $bg-color-primary;
     }
 
     &-editBtn{
