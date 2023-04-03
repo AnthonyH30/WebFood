@@ -7,12 +7,14 @@ import { FoodContext } from "../../Context/FoodContext";
 import Modal from "react-modal";
 import ProductCard from "../../Components/ProductCard";
 import ButtonApp from "../../Components/ButtonApp";
+import { AuthContext } from "../../Context/AuthContext";
 
 Modal.setAppElement('#root');
 
 function Home(){
 
     const { search, setSearch, modalIsOpen, setModalIsOpen, image, setImage, productName, setProductName, description, setDescription, handleSubmit, products, handleDelete, handleEdit} = useContext(FoodContext);
+    const { Signed } = useContext(AuthContext);
 
     function closeModal(){
         setModalIsOpen(false);
@@ -21,6 +23,7 @@ function Home(){
     function openModal(){
         setModalIsOpen(true);
     }
+    console.log(Signed);
 
     return(
         <>

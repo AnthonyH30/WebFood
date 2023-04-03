@@ -25,10 +25,11 @@
             @include center;
             flex-direction: column;
             background-color: $bg-color-primary;
-            padding: 16px 16px;
+            padding: 36px 16px;
             gap: 5px;
             border-radius: 8px;
             animation: starting 1s;
+            min-width: 250px;
             
 
             &-title{

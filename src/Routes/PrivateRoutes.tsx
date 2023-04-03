@@ -1,16 +1,12 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Error from "../Pages/Error";
-import Home from '../Pages/Home';
+import { useContext } from 'react';
+import { Outlet, Navigate } from "react-router-dom";
+import { AuthContext } from "../Context/AuthContext";
 
 function PrivateRoutes(){
-    return(
-        <Router>
-            <Routes>
-                <Route path='/' element={<Home />} />
-                <Route path='*' element={<Error />} />
-            </Routes>
-        </Router>
-    )
+
+    const { signed } = useContext(AuthContext)
+
+    return signed ? <Outlet /> : <Navigate to="/" />
 }
 
 export default PrivateRoutes;
