@@ -1,19 +1,14 @@
 import { useContext } from 'react';
 import AuthProvider, { AuthContext } from './Context/AuthContext';
 import './Global/Global.scss';
-import PrivateRoutes from './Routes/PrivateRoutes';
 import PublicRoutes from './Routes/PublicRoutes';
+import PrivateRoutes from './Routes/PrivateRoutes';
 
-const auth = !false;
 
 function App() {
 
-  const {  } = useContext(AuthContext);
-
-  return (
-    <AuthProvider>
-      {auth ? <PrivateRoutes /> : <PublicRoutes />}
-    </AuthProvider>
+  return(
+    <PublicRoutes />
   )
 }
 
